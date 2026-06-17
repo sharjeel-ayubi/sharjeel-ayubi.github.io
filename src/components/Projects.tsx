@@ -8,21 +8,18 @@ export function Projects() {
       id="projects"
       eyebrow="Featured Projects"
       title="Selected work."
-      lead="A cross-section of products I've architected and shipped. Replace the placeholders with screenshots and live links."
+      lead="A cross-section of products I've architected and shipped."
     >
       <div className="mt-[34px] grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
           <article key={p.name} className="glass group flex flex-col overflow-hidden p-0 transition-transform duration-300 hover:-translate-y-1">
-            {/* Screenshot placeholder */}
+            {/* Thumbnail */}
             <div
               className="relative flex h-[168px] items-center justify-center border-b border-line"
               style={{ background: "linear-gradient(135deg, rgba(124,92,255,0.18), rgba(52,215,224,0.12))" }}
             >
               <span className="text-[2.2rem]" aria-hidden>
                 {p.glyph}
-              </span>
-              <span className="absolute bottom-2.5 font-mono text-[0.72rem] uppercase tracking-[0.1em] text-muted">
-                screenshot placeholder
               </span>
             </div>
 
