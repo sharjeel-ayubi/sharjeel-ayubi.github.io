@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   GLOBAL BASE
+   ============================================================ */
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink text-text font-body antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Visible keyboard focus everywhere — accessibility floor */
+  :focus-visible {
+    outline: 2px solid theme("colors.accent");
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ============================================================
+   REUSABLE COMPONENT CLASSES (the design system in CSS)
+   Components compose these with Tailwind utilities.
+   ============================================================ */
+@layer components {
+  .wrap {
+    @apply relative z-10 mx-auto w-full max-w-site px-6;
+  }
+
+  /* Frosted glass surface used across cards and the navbar */
+  .glass {
+    @apply rounded-card border;
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  /* Mono "eyebrow" label with a glowing dot — the signature data motif */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-muted;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-[7px] w-[7px] rounded-full bg-cyan;
+    box-shadow: 0 0 12px theme("colors.cyan");
+  }
+
+  .section-title {
+    @apply mt-3 mb-2.5 font-display font-semibold;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+  }
+  .section-lead {
+    @apply max-w-[620px] text-muted;
+    font-size: 1.02rem;
+  }
+
+  .gradient-text {
+    @apply bg-aurora bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-full border px-[22px] py-[13px] text-[0.96rem] font-medium transition-transform duration-200;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    @apply bg-text text-ink;
+    border-color: transparent;
+  }
+  .btn-primary:hover {
+    background: #fff;
+  }
+  .btn-ghost {
+    @apply text-text;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Skill / project tags */
+  .tag {
+    @apply rounded-lg border px-[11px] py-1.5 text-[0.82rem] text-muted transition-colors;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ============================================================
+   SIGNATURE: ambient aurora + grid overlay
+   ============================================================ */
+.aurora-field {
+  @apply pointer-events-none fixed inset-0 z-0 overflow-hidden;
+}
+.blob {
+  @apply absolute rounded-full;
+  filter: blur(90px);
+  opacity: 0.55;
+}
+.blob-a {
+  width: 520px;
+  height: 520px;
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(circle at 30% 30%, theme("colors.violet"), transparent 70%);
+}
+.blob-b {
+  width: 480px;
+  height: 480px;
+  top: 8%;
+  right: -140px;
+  background: radial-gradient(circle at 70% 30%, theme("colors.indigo"), transparent 70%);
+  @apply animate-drift;
+}
+.blob-c {
+  width: 560px;
+  height: 560px;
+  top: 120%;
+  left: 30%;
+  opacity: 0.35;
+  background: radial-gradient(circle at 50% 50%, theme("colors.cyan"), transparent 70%);
+}
+.grid-overlay {
+  @apply pointer-events-none fixed inset-0 z-0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+}
+
+/* Scroll-reveal animation (driven by the Reveal component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  @apply absolute z-[100] rounded-lg bg-text px-4 py-2.5 text-ink;
+  left: -999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}

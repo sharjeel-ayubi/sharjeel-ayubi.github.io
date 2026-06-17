@@ -1,0 +1,5 @@
+# Replace USERNAME with your GitHub username (or your custom domain)
+User-agent: *
+Allow: /
+
+Sitemap: https://sharjeelayubi.github.io/sitemap.xml
