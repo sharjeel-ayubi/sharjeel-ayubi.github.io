@@ -44,7 +44,6 @@ export const experience: ExperienceItem[] = [
     company: "Norgic AB",
     period: "Apr 2020 — Mar 2021",
     highlights: [
-      "Built Mustard (real estate) from the ground up in SwiftUI + Combine — landlord, tenant and co-applicant workflows with complex search and ad management.",
       "Drove Agile delivery end-to-end: client comms, edge-case analysis and API contract definition with backend and Android teams.",
       "Added features to and maintained Togee (social screen-sharing) including voice/video calling and real-time messaging.",
     ],
@@ -55,7 +54,7 @@ export const experience: ExperienceItem[] = [
     company: "Clustox",
     period: "Jan 2019 — Mar 2020",
     highlights: [
-      "Developed iDecore, an ARKit 2.0 furniture placement app with real-world 3D positioning, scaling and relocation.",
+      "Developed Home AR - 3D Design & Decor, an ARKit 2.0 furniture placement app with real-world 3D positioning, scaling and relocation.",
       "Built Study Buddy for macOS with PDFKit — multi-color highlighting, search, image annotation and a hidden-content quiz mode (live on the Mac App Store).",
       "Built Interakt, a TikTok-style short-form video platform using AVFoundation + AWS with recording, upload, feed and engagement.",
     ],

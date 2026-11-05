@@ -21,7 +21,7 @@ export function Hero() {
               View projects
             </a>
             <a className="btn btn-ghost" href={profile.resumePath} download>
-              Download résumé
+              Download CV
             </a>
           </div>
 
