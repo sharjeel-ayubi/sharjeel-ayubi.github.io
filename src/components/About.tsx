@@ -1,7 +1,7 @@
 import { Section } from "./ui/Section";
 
 const facts = [
-  { value: "2025 → now", desc: "Tech Lead at Hazel Mobile, building Xeno (on-device AI)" },
+  { value: "2025 → now", desc: "Tech Lead at Imagination AI, building Xeno (on-device AI)" },
   { value: "Aviation", desc: "Safety-critical real-time systems for Volocopter" },
   { value: "BS CS", desc: "FAST-NUCES Lahore · 2011–2015" },
 ];

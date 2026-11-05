@@ -4,7 +4,7 @@ import type { ExperienceItem, LeadershipItem } from "./types";
 export const experience: ExperienceItem[] = [
   {
     role: "Senior iOS Engineer & Tech Lead",
-    company: "Hazel Mobile",
+    company: "Imagination AI",
     period: "May 2025 — Present",
     highlights: [
       "Owned end-to-end architecture and development of Xeno, an AI-powered document chat app in SwiftUI + SwiftData, from ideation to production release.",
@@ -74,7 +74,7 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const leadership: LeadershipItem[] = [
-  { glyph: "👥", title: "Team Leadership", body: "Led iOS teams at Hazel Mobile and Coeus — setting architectural standards and owning delivery." },
+  { glyph: "👥", title: "Team Leadership", body: "Led iOS teams at Imagination AI and Coeus — setting architectural standards and owning delivery." },
   { glyph: "🧭", title: "Mentoring", body: "Coach engineers through code reviews and pairing, and write the docs that cut onboarding time ~30%." },
   { glyph: "🔄", title: "Agile / Scrum", body: "Sprint planning, technical analysis and feature breakdown in remote teams across multiple time zones." },
   { glyph: "🤝", title: "Cross-functional", body: "Translate product requirements into pragmatic technical solutions with design, backend and Android." },
